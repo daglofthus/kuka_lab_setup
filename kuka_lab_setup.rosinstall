@@ -1,0 +1,8 @@
+- git:
+    local-name: workspace
+    uri: https://github.com/daglofthus/workspace.git
+    version: master
+- git:
+    local-name: forcesensor
+    uri: https://github.com/daglofthus/forcesensor.git
+    version: master
