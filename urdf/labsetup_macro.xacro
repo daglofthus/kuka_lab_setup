@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">   
+  <xacro:include filename="$(find kuka_resources)/urdf/common_constants.xacro"/>     
+  <xacro:include filename="$(find workspace)/urdf/workspace.xacro"/>
+  <xacro:include filename="$(find robotiq_2f_85_gripper_visualization)/urdf/robotiq_arg2f_85_model.xacro"/>
+  <xacro:include filename="$(find forcesensor)/urdf/forcesensor.xacro"/>
+  <xacro:include filename="$(find kuka_kr6_support)/urdf/kr6r900sixx.xacro"/>
+
+  <xacro:macro name="labsetup" params="prefix">
+    <link name="${prefix}ee"/>
+
+    <!-- Robot to Forcesensor -->
+    <joint name="${prefix}tool0-force" type="fixed">
+      <parent link="${prefix}tool0"/>
+      <child link="${prefix}force"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Workspace to Robot -->
+    <joint name="${prefix}base_link-pedestal" type="fixed">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}pedestal"/>
+      <origin xyz="0 0 -0.85" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Forcesensor to Gripper-->
+    <joint name="${prefix}forcesensor-robotiq" type="fixed">
+      <parent link="${prefix}electronic"/>
+      <child link="${prefix}robotiq_arg2f_base_link"/>
+      <origin rpy="0 0 0" xyz="0 0 0.011"/>
+    </joint>
+
+    <!-- Gripper contact point (ee)-->
+    <joint name="${prefix}robotiq-ee" type="fixed">
+      <parent link="${prefix}robotiq_arg2f_base_link"/>
+      <child link="${prefix}ee"/>
+      <origin rpy="0 0 0" xyz="0 0 0.09"/>
+    </joint>
+  </xacro:macro>
+</robot>

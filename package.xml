@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>kuka_lab_setup</name>
+  <version>0.0.1</version>
+  <description>The kuka_lab_setup package</description>
+  <maintainer email="daglof@stud.ntnu.no">Dag Lofthus</maintainer>
+  <license>LGPL-3.0</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <test_depend>roslaunch</test_depend>
+  <exec_depend>industrial_robot_client</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>kuka_resources</exec_depend>
+  <exec_depend>workspace</exec_depend>
+  <exec_depend>forcesensor</exec_depend>
+  <exec_depend>robotiq_2f_85_gripper_visualization</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <export>
+    <architecture_independent/>
+  </export>
+</package>
