@@ -14,7 +14,7 @@ kuka_experimental
 https://github.com/ros-industrial/kuka_experimental.git
 
 robotiq
-https://github.com/beta-robots/robotiq.git
+https://github.com/ros-industrial/robotiq
 
 In addition, run
 kuka_lab_setup.rosinstall
