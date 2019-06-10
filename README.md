@@ -17,4 +17,6 @@ robotiq
 https://github.com/ros-industrial/robotiq
 
 In addition, run
-kuka_lab_setup.rosinstall
+```
+rosinstall . kuka_lab_setup.rosinstall
+```
